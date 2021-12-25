@@ -1,13 +1,13 @@
-# import time
-
-
-# link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
+import time
 link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
-# link = "https://stepik.org/lesson/237240/step/8?unit=209628"
+link1 = "https://google.com"  # линк теста без кнопки - для проверки сообщения от assert
 
 
 def test_button_add_to_cart(browser):
     browser.get(link)
-    # time.sleep(5)
-    assert browser.find_element_by_css_selector(".btn-add-to-basket"), \
-        ">!< There is no button 'Add To Cart' at page"
+    ast = None
+    # time.sleep(10)
+    try:
+        browser.find_element_by_css_selector(".btn-add-to-basket")
+    except:
+        assert ast, ">!< There is no button 'Add To Cart' at page"
